@@ -2,9 +2,9 @@
 
 ## Group Members:
  - Dhinesh Rajasekaran 
-    -UID: 119400241
+    - UID: 119400241
  - Arshad Sheik
-    -UID: 118438832
+    - UID: 118438832
    
 ## Project Description:
  - For the midterm project, me and my teammate have decided to choose Acme’s perception robotic module & work on the deliverables and provide a high-quality solution following the essential software engineering practices which they can directly integrate into their product.

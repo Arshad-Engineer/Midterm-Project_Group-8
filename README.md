@@ -9,6 +9,9 @@
 ## Project Description:
  - For the midterm project, me and my teammate have decided to choose Acme’s perception robotic module & work on the deliverables and provide a high-quality solution following the essential software engineering practices which they can directly integrate into their product.
  - Computer vision based automatic human detector and tracker which gives location coordinates of multiple humans detected in a realtime video feed from a monocular video camera.
+ 
+## Video Presentation:
+ - https://youtu.be/AMKvC8GD-Lg
 
 ## Requirements: 
  - Laptop/Raspberry Pi

@@ -3,7 +3,7 @@
 ## Group Members:
  - Dhinesh Rajasekaran 
     - UID: 119400241
- - Arshad Sheik
+ - Arshad Shaik
     - UID: 118438832
    
 ## Project Description:

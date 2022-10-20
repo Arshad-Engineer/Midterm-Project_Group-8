@@ -1,5 +1,6 @@
 [![Build Status](https://github.com/Arshad-Engineer/Midterm-Project_Group-8/actions/workflows/build_and_coveralls.yml/badge.svg)](https://github.com/Arshad-Engineer/Midterm-Project_Group-8/actions/workflows/build_and_coveralls.yml)
-[![Coverage Status](https://coveralls.io/repos/github/Arshad-Engineer/Midterm-Project_Group-8/badge.svg?branch=master)](https://coveralls.io/github/Arshad-Engineer/Midterm-Project_Group-8?branch=master
+[![Coverage Status](https://coveralls.io/repos/github/Arshad-Engineer/Midterm-Project_Group-8/badge.svg?branch=master)](https://coveralls.io/github/Arshad-Engineer/Midterm-Project_Group-8?branch=master)
+---
 
 # Acme's Perception Robotic Module
 

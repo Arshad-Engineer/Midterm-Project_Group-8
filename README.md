@@ -42,6 +42,7 @@
  - Human Tracker functionality yet to be implemented
  - Depth calc inaccuracy and final implementation yet to be done
  - Moving of source code from header file to cpp file
+ - Convertion of coordinates from camera to robot frame
 
 ## How to build, run & test (from command line)
  - Run the following commands in order

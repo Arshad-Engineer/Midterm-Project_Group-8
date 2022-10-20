@@ -35,23 +35,43 @@
  - https://docs.google.com/spreadsheets/d/1C9AE03gUqFlZGb2_IyPfMfevvJ9ezGKtAxI_n_HEC9M/edit?usp=sharing
 
 ## Shareable link to sprint planning notes and review Google Doc
+ - https://docs.google.com/document/d/1wD_bKCtLOdt1voyiwZQc1tobgl-Iy5lTP9kQC6JQSEE/edit?usp=sharing
 
 ## Sections for (stubs in Phase I, completed by end of Phase II):
+ - Development in progress
 
 ## Operation/run/test/demo steps
+ - Please refer the below sections
  
 ## Dependencies (and how to install if not included in the repository)
+ - None
 
 ## Known issues/bugs
+ - Human Tracker functionality yet to be implemented
 
 ## API and other developer documentation (e.g. parameters and their definitions and default values) 
 
 ## How to build (from command line)
-
+ - Run the following commands
+```
+git clone https://github.com/stark-2000/Midterm-Project_Group-8.git
+mkdir build
+cd build
+cmake ..
+make
+cd app
+```
 ## How to run the demo (from command line)
+ - Run program (executable)
+```
+./app/shell-app
+```
 
 ## How to run tests (from command line)
-
+1. Run the following test
+```
+./test/cpp-test
+```
 ## How to generate Doxygen documentation (from command line)
 ```
 doxygen <config_file>

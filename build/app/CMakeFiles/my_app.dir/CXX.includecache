@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dhinesh/Downloads/Midterm-Project_Group-8/app/main.cpp
+fstream
+-
+iostream
+-
+../include/detector.hpp
+/home/dhinesh/Downloads/Midterm-Project_Group-8/include/detector.hpp
+
+/home/dhinesh/Downloads/Midterm-Project_Group-8/include/detector.hpp
+math.h
+-
+iostream
+-
+

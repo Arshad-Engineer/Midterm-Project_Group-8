@@ -37,7 +37,7 @@ class FetchImageData {
    *
    */
   string get_data() {
-    file.open("/home/dhinesh/Downloads/pixel_coord.txt");
+    file.open("/home/dhinesh/Downloads/Midterm-Project_Group-8/pixel_coord.txt");
     if (!file) {
       cout << "Unable to find pixel_coord.txt";
       exit(1);

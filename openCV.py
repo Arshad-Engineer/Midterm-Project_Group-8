@@ -42,7 +42,7 @@ while(True):
         b1 = (yA + yB)/2
         print("Pixel Coordinates of Human: ", a1, ",", b1)
         with open("pixel_coord.txt", "a") as f:
-          print(a1, ",", b1, file=f)
+          print(a1,",",b1,";", file=f)
     
     # Write the output video 
     out.write(frame.astype('uint8'))

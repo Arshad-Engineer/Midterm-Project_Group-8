@@ -1,1 +1,1 @@
-/usr/bin/c++  -Wall -Wextra -Wpedantic -g  -rdynamic CMakeFiles/my_app.dir/main.cpp.o  -o my_app 
+/usr/bin/c++  -g -O0 -fprofile-arcs -ftest-coverage -g  -fprofile-arcs -ftest-coverage -rdynamic CMakeFiles/my_app.dir/main.cpp.o  -o my_app 

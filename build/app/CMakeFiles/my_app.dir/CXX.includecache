@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/arshad/Documents/ENPM808X/Midterm-Project_Group-8/app/main.cpp
+/home/dhinesh/Downloads/Midterm-Project_Group-8/app/main.cpp
 fstream
 -
 iostream
 -
 ../include/detector.hpp
-/home/arshad/Documents/ENPM808X/Midterm-Project_Group-8/include/detector.hpp
+/home/dhinesh/Downloads/Midterm-Project_Group-8/include/detector.hpp
 
-/home/arshad/Documents/ENPM808X/Midterm-Project_Group-8/include/detector.hpp
+/home/dhinesh/Downloads/Midterm-Project_Group-8/include/detector.hpp
 math.h
 -
 iostream

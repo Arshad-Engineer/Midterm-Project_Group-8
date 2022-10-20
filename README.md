@@ -1,4 +1,4 @@
-[![Build Status](https://app.travis-ci.com/github/stark-2000/Midterm-Project_Group-8.png?branch=master)](https://app.travis-ci.com/github/stark-2000/Midterm-Project_Group-8)
+[![Build Status](https://app.travis-ci.com/stark-2000/Midterm-Project_Group-8.svg?branch=main)](https://app.travis-ci.com/github/stark-2000/Midterm-Project_Group-8)
 [![Coverage Status](https://coveralls.io/repos/github/stark-2000/Midterm-Project_Group-8/badge.svg?branch=main)](https://coveralls.io/github/stark-2000/Midterm-Project_Group-8?branch=main)
 ---
 
@@ -22,7 +22,8 @@
     - UID: 118438832
  
 ## Video Presentation:
- - https://youtu.be/AMKvC8GD-Lg
+ - https://youtu.be/AMKvC8GD-Lg - Phase 0
+ - https://youtu.be/iDyVsz3qj0Y - Phase 1
 
 ## Requirements: 
  - Laptop/Raspberry Pi
@@ -79,5 +80,3 @@ doxygen <config_file>
 cd html
 firefox index.html
 ```
- 
-- https://youtu.be/iDyVsz3qj0Y

@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -Wpedantic -g  -rdynamic CMakeFiles/HDT_E.dir/main.cpp.o CMakeFiles/HDT_E.dir/HDT.cpp.o  -o HDT_E 

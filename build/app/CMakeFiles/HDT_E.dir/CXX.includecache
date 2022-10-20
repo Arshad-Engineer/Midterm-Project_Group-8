@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dhinesh/Downloads/cpp-boilerplate/app/HDT.cpp
+iostream
+-
+fstream
+-
+math.h
+-
+../include/detector.hpp
+/home/dhinesh/Downloads/cpp-boilerplate/include/detector.hpp
+
+/home/dhinesh/Downloads/cpp-boilerplate/app/main.cpp
+iostream
+-
+fstream
+-
+../include/detector.hpp
+/home/dhinesh/Downloads/cpp-boilerplate/include/detector.hpp
+
+/home/dhinesh/Downloads/cpp-boilerplate/include/detector.hpp
+iostream
+-
+

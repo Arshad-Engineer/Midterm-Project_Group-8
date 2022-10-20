@@ -62,7 +62,7 @@ cd app
 ## How to run the demo (from command line)
  - Run program (executable)
 ```
-./app/shell-app
+./app/my_app
 ```
 
 ## How to run tests (from command line)
@@ -70,9 +70,21 @@ cd app
 ```
 ./test/cpp-test
 ```
+## Command to check Google Style and run static code analysis
+```
+cpplint $( find . -name main.cpp) > cpplintlog
+
+cppcheck --enable=all --std=c++11 --suppress=missingIncludeSystem $( find . -name main.cpp) > cppchecklog
+```
+## Instructions for code coverage
+```
+cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
+make
+make code_coverage
+```
 ## How to generate Doxygen documentation (from command line)
 ```
-doxygen <config_file>
+doxygen main.cpp
 cd html
 firefox index.html
 ```

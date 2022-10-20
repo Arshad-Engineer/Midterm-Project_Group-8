@@ -19,7 +19,7 @@
  
 ## Video Presentation:
  - https://youtu.be/AMKvC8GD-Lg - Phase 0
- - https://youtu.be/iDyVsz3qj0Y - Phase 1
+ - https://youtu.be/kq9s1iwcfdw - Phase 1
 
 ## Requirements: 
  - Laptop/Raspberry Pi

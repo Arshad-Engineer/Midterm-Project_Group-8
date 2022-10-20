@@ -6,5 +6,5 @@ CXX_FLAGS = -Wall -Wextra -Wpedantic -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/dhinesh/Downloads/cpp-boilerplate/include 
+CXX_INCLUDES = -I/home/arshad/Documents/ENPM808X/Midterm-Project_Group-8/include 
 

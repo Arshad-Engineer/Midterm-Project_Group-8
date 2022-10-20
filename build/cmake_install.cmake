@@ -1,4 +1,4 @@
-# Install script for directory: /home/dhinesh/Downloads/cpp-boilerplate
+# Install script for directory: /home/arshad/Documents/ENPM808X/Midterm-Project_Group-8
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,9 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/dhinesh/Downloads/cpp-boilerplate/build/app/cmake_install.cmake")
-  include("/home/dhinesh/Downloads/cpp-boilerplate/build/test/cmake_install.cmake")
-  include("/home/dhinesh/Downloads/cpp-boilerplate/build/vendor/googletest/googletest/cmake_install.cmake")
+  include("/home/arshad/Documents/ENPM808X/Midterm-Project_Group-8/build/app/cmake_install.cmake")
+  include("/home/arshad/Documents/ENPM808X/Midterm-Project_Group-8/build/test/cmake_install.cmake")
+  include("/home/arshad/Documents/ENPM808X/Midterm-Project_Group-8/build/vendor/googletest/googletest/cmake_install.cmake")
 
 endif()
 
@@ -53,5 +53,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dhinesh/Downloads/cpp-boilerplate/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/arshad/Documents/ENPM808X/Midterm-Project_Group-8/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

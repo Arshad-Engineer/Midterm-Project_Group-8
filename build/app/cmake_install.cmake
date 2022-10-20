@@ -1,4 +1,4 @@
-# Install script for directory: /home/dhinesh/Downloads/cpp-boilerplate/app
+# Install script for directory: /home/arshad/Documents/ENPM808X/Midterm-Project_Group-8/app
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -30,7 +30,7 @@ class HumanLocCalc {
    * coordinates
    * @param x x-axis coordinate of human loc
    * @param y y-axis coordinate of human loc
-   * @return r, theta and phi of human loc are returned
+   * @return zero
    */
   double coor_calc(double x, double y) {
     // Loc w.r.t Camera Frame:

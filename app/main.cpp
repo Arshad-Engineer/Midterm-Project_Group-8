@@ -30,6 +30,12 @@ class FetchImageData {
  public:
   string line;
   string a, b;
+
+  /**
+   * @brief A normal member function to fetch data from txt file & split received data
+   * @return null character
+   *
+   */
   string get_data() {
     file.open("/home/dhinesh/Downloads/pixel_coord.txt");
     if (!file) {
@@ -53,6 +59,11 @@ class FetchImageData {
   }
 };
 
+/**
+ * @brief Main function which displays detected human cartesian coordinate
+ * & displays computed spherical coordinate of human in camera frame
+ * @return zero
+ */
 int main() {
   string a, b;
   FetchImageData obj;

@@ -32,6 +32,7 @@
  git@github.com:Arshad-Engineer/Midterm-Project_Group-8.git
  
 ## AIP Google Sheet
+ - https://docs.google.com/spreadsheets/d/1C9AE03gUqFlZGb2_IyPfMfevvJ9ezGKtAxI_n_HEC9M/edit?usp=sharing
 
 ## Shareable link to sprint planning notes and review Google Doc
 

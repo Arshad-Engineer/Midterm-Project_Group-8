@@ -1,5 +1,5 @@
 [![Build Status](https://app.travis-ci.com/github/stark-2000/Midterm-Project_Group-8.png?branch=master)](https://app.travis-ci.com/github/stark-2000/Midterm-Project_Group-8)
-[![Coverage Status](https://coveralls.io/repos/github/Arshad-Engineer/Midterm-Project_Group-8/badge.svg?branch=master)](https://coveralls.io/github/Arshad-Engineer/Midterm-Project_Group-8?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/stark-2000/Midterm-Project_Group-8/badge.svg?branch=main)](https://coveralls.io/github/stark-2000/Midterm-Project_Group-8?branch=main)
 ---
 
 # Acme's Perception Robotic Module

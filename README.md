@@ -1,4 +1,4 @@
-[![Build Status](https://app.travis-ci.com/github/stark-2000/Midterm-Project_Group-8.png?branch=master)](https://app.travis-ci.com/github/stark-2000/Midterm-Project_Group-8)
+[![Build Status](https://app.travis-ci.com/stark-2000/Midterm-Project_Group-8.svg?branch=main)](https://app.travis-ci.com/github/stark-2000/Midterm-Project_Group-8)
 [![Coverage Status](https://coveralls.io/repos/github/stark-2000/Midterm-Project_Group-8/badge.svg?branch=main)](https://coveralls.io/github/stark-2000/Midterm-Project_Group-8?branch=main)
 ---
 

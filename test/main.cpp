@@ -1,8 +1,9 @@
 /**
- * @copyright (c) 2022 Dhinesh Rajasekaran
- * @file main.cpp
- * @author Dhinesh Rajasekaran (dhinesh@umd.edu)
- * @brief Google Test execution file
+ * @copyright (c) 2022 Arshad Shaik
+ * @file test.cpp
+ * @author Arshad Shaik (arshad22@umd.edu)
+ * @brief Test cases to check the functionality of Human Tracker
+ * & Detector program
  * @version 1.0
  * @date 2022-10-12
  *

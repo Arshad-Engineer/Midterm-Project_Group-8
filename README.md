@@ -27,52 +27,53 @@
  - Webcam/Monocular Video Camera
  - VS Code
  
- git@github.com:Arshad-Engineer/Midterm-Project_Group-8.git
- 
 ## AIP Google Sheet
  - https://docs.google.com/spreadsheets/d/1C9AE03gUqFlZGb2_IyPfMfevvJ9ezGKtAxI_n_HEC9M/edit?usp=sharing
 
 ## Shareable link to sprint planning notes and review Google Doc
  - https://docs.google.com/document/d/1wD_bKCtLOdt1voyiwZQc1tobgl-Iy5lTP9kQC6JQSEE/edit?usp=sharing
-
-## Sections for (stubs in Phase I, completed by end of Phase II):
- - Development in progress
-
-## Operation/run/test/demo steps
- - Please refer the below sections
  
-## Dependencies (and how to install if not included in the repository)
- - None
-
+## Dependencies
+ - openCV library
+ - doxygen 
+ - lcov
+ 
 ## Known issues/bugs
  - Human Tracker functionality yet to be implemented
+ - Depth calc inaccuracy and final implementation yet to be done
+ - Moving of source code from header file to cpp file
 
-## API and other developer documentation (e.g. parameters and their definitions and default values) 
-
-## How to build (from command line)
- - Run the following commands
+## How to build, run & test (from command line)
+ - Run the following commands in order
 ```
-git clone https://github.com/stark-2000/Midterm-Project_Group-8.git
+git clone --recursive https://github.com/stark-2000/Midterm-Project_Group-8.git
+cd Midterm-Project_Group-8
+python3 openCV.py
 mkdir build
 cd build
 cmake ..
 make
-cd app
-```
-## How to run the demo (from command line)
- - Run program (executable)
-```
-./app/shell-app
-```
-
-## How to run tests (from command line)
-1. Run the following test
-```
 ./test/cpp-test
+./app/my_app
+./
+```
+## Command to check Google Style and run static code analysis
+- From the app directory run the following command
+```
+cpplint $( find . -name main.cpp) > cpplintlog
+cppcheck --enable=all --std=c++11 --suppress=missingIncludeSystem $( find . -name main.cpp) > cppchecklog
+```
+## Instructions for code coverage
+- From the build directory run the following command
+```
+cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
+make
+make code_coverage
 ```
 ## How to generate Doxygen documentation (from command line)
+- From the app directory run the following command
 ```
-doxygen <config_file>
+doxygen main.cpp
 cd html
 firefox index.html
 ```

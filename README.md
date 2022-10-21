@@ -60,7 +60,6 @@ cmake ..
 make
 ./test/cpp-test
 ./app/my_app
-./
 ```
 ## Command to check Google Style and run static code analysis
 - From the app directory run the following command

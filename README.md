@@ -1,3 +1,6 @@
+[![Build Status](https://app.travis-ci.com/stark-2000/Midterm-Project_Group-8.svg?branch=main)](https://app.travis-ci.com/github/stark-2000/Midterm-Project_Group-8)
+[![Coverage Status](https://coveralls.io/repos/github/stark-2000/Midterm-Project_Group-8/badge.png?branch=main)](https://coveralls.io/github/stark-2000/Midterm-Project_Group-8?branch=main)
+---
 # Acme's Perception Robotic Module
 
 ## Disclaimer
@@ -19,7 +22,7 @@
  
 ## Video Presentation:
  - https://youtu.be/AMKvC8GD-Lg - Phase 0
- - https://youtu.be/iDyVsz3qj0Y - Phase 1
+ - https://youtu.be/kq9s1iwcfdw - Phase 1
 
 ## Requirements: 
  - Laptop/Raspberry Pi
@@ -42,6 +45,8 @@
  - Human Tracker functionality yet to be implemented
  - Depth calc inaccuracy and final implementation yet to be done
  - Moving of source code from header file to cpp file
+ - Convertion of coordinates from camera to robot frame
+ - Develop Test Case for HumanTracker class
 
 ## How to build, run & test (from command line)
  - Run the following commands in order
@@ -55,7 +60,6 @@ cmake ..
 make
 ./test/cpp-test
 ./app/my_app
-./
 ```
 ## Command to check Google Style and run static code analysis
 - From the app directory run the following command
@@ -66,7 +70,7 @@ cppcheck --enable=all --std=c++11 --suppress=missingIncludeSystem $( find . -nam
 ## Instructions for code coverage
 - From the build directory run the following command
 ```
-cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
+cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug
 make
 make code_coverage
 ```

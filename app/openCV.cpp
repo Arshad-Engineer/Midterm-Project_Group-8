@@ -1,6 +1,6 @@
 #include <iostream>
+#include <math.h>
 #include <opencv2/opencv.hpp>
-
 
 using std::cout;
 using std::endl;
@@ -19,12 +19,28 @@ using cv::Mat;
 int main (int argc, const char * argv[])
 {
   double a[100], b[100];
+  const double h = 176; // Average Human Height (in cm)
+  const double H = 98;  // Floor to table height: 74cm + laptop to web camera height: 24cm
+  double z, x, y;
+  double r, r1;
+
+  double frame_h = 640, frame_v = 480;
+  double mid_px_h = frame_h/2;
+  double mid_px_v = frame_v/2;
+  const double mid_p = 90;
+  const double mid_a = 90; // in Degrees
+  double p, az;
+  double FoV_h = 49.5; // in Degrees
+  double FoV_v = 37.125;
+  const double res_h =  FoV_h/frame_h;
+  const double res_v = FoV_v/frame_v;
+
   // Set video source, 0 for default web cam
   VideoCapture video(0);
 
-  // Set video frame size - set to 720p size
-  video.set(CAP_PROP_FRAME_WIDTH, 640);
-  video.set(CAP_PROP_FRAME_HEIGHT, 480);
+  // Set video frame size - set to 640*480 resolution
+  video.set(CAP_PROP_FRAME_WIDTH, frame_h);
+  video.set(CAP_PROP_FRAME_HEIGHT, frame_v);
 
   //Check video source availability
   if (!video.isOpened())
@@ -73,8 +89,15 @@ int main (int argc, const char * argv[])
 
       putText(img, text, Point(r.tl().x,r.tl().y-10), FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0, 255, 0), 2);
 
-      a[i] = (r.tl().x + r.br().x)/2;
-      b[i] = (r.tl().y + r.br().y)/2;
+      //cout << "rect x: " << r.tl().x << " rect y: " << r.tl().y << endl;
+      //cout << "width: " << r.width << " height: " << r.height << endl;
+
+      a[i] = (r.tl().x + (r.width/2));
+      b[i] = r.tl().y;
+      cout << "midpoint x: " << a[i] << " midpoint y: " << b[i] << endl;
+
+      //a[i] = (r.tl().x + r.br().x)/2;
+      //b[i] = (r.tl().y + r.br().y)/2;
     }
 
     // Displaying no of humans detected 
@@ -85,15 +108,59 @@ int main (int argc, const char * argv[])
     {
        cout << "Human " << i+1 << ": ";
        cout << a[i] << "," << b[i] << endl;
+       if (b[i] <= mid_px_v)
+       {
+         p = (90 - ((mid_px_v - b[i]) *res_v));
+       } 
+
+       else if (b[i] > mid_px_v)
+       {
+         p = (90 + ((b[i] - mid_px_v)*res_v));
+       } 
+
+       cout << "p: " << p << endl;
+
+       if (a[i] > mid_px_h)
+       {
+         az = (90 - ((a[i] - mid_px_h)*res_h));
+       } 
+
+       else if (a[i] <= mid_px_h)
+       {
+         az = (90 + ((mid_px_h - a[i])*res_h));
+       } 
+
+       cout << "az: " << az << endl;
+       
+       if (p == 90)
+       {
+        p = 85 * (M_PI / 180);
+       }
+
+       else 
+          p = p * (M_PI / 180);
+
+       az = az * (M_PI / 180);
+
+       z = h - H;
+       cout << "z: " << z << endl;
+       r = z/cos(p);
+       cout << "r: " << r << endl;
+       r1 = r * sin(p);
+       x = r1 * cos(az);
+       y = r1 * sin(az);
+       
+       cout << "x:" << x << " , " << "y:" << y << " , " << "z:" << z << endl;
     }
-
+    
     cout << endl;
-
+    
     // Overlay info on real-time video
     imshow("video capture", img);
     if (waitKey(20) >= 0)
       break;
     }
-    
     return 0;
 }
+
+

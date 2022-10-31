@@ -15,27 +15,31 @@
 
 HumanLocCalc obj23;
 
+// 2 people standing on left and right respectively
+int a1[1] = {160}; a2[1] = {300}; a3[1] = {480}; a4[1] = {600}
+int b1[1] = {120}; b2[1] = {220}, b3[1] = {360}; b4[1] = {440}
+int noOfHum = 1;
+
 TEST(coor_calc, should_pass) {
-  obj23.coor_calc(270, 45);
-  EXPECT_NEAR(obj23.r, 273, 0.9);
-  EXPECT_NEAR(obj23.theta, 0.165, 0.009);
-  EXPECT_NEAR(obj23.phi, 1.552, 0.009);
+  obj23.coor_calc(a1, b1, noOfHum);
+  EXPECT_NEAR(obj23.x, , -114.74, 1);
+  EXPECT_NEAR(obj23.y, 522.98, 1);
+  EXPECT_NEAR(obj23.z, 87.5, 1);
 
-  obj23.coor_calc(0, 0);
-  EXPECT_NEAR(obj23.r, 5, 0.9);
-  double temp = obj23.theta;
-  EXPECT_NEAR(isnan(temp), 1, 0);
-  EXPECT_NEAR(obj23.phi, 0, 0.009);
+  obj23.coor_calc(a2, b2, noOfHum);
+  EXPECT_NEAR(obj23.x, , -87.46, 1);
+  EXPECT_NEAR(obj23.y, 3239.00, 1);
+  EXPECT_NEAR(obj23.z, 87.5, 1);
 
-  obj23.coor_calc(-63, 47);
-  EXPECT_NEAR(obj23.r, 78, 0.9);
-  EXPECT_NEAR(obj23.theta, -0.640, 0.009);
-  EXPECT_NEAR(obj23.phi, 1.507, 0.009);
+  obj23.coor_calc(a3, b3, noOfHum);
+  EXPECT_NEAR(obj23.x, , -114.74, 1);
+  EXPECT_NEAR(obj23.y, -522.98, 1);
+  EXPECT_NEAR(obj23.z, 87.5, 1);
 
-  obj23.coor_calc(23, -74);
-  EXPECT_NEAR(obj23.r, 77, 0.9);
-  EXPECT_NEAR(obj23.theta, -1.269, 0.009);
-  EXPECT_NEAR(obj23.phi, 1.506, 0.009);
+  obj23.coor_calc(a4, b4, noOfHum);
+  EXPECT_NEAR(obj23.x, , -116.68, 1);
+  EXPECT_NEAR(obj23.y, -293.86, 1);
+  EXPECT_NEAR(obj23.z, 87.5, 1);
 }
 
 /*

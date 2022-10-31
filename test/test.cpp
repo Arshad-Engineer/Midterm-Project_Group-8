@@ -26,17 +26,17 @@ TEST(coor_calc, should_pass) {
   EXPECT_NEAR(obj23.y, 522.98, 1);
   EXPECT_NEAR(obj23.z, 87.5, 1);
 
-  obj23.coor_calc(a2, b2);
+  obj23.coor_calc(a2, b2, noOfHum);
   EXPECT_NEAR(obj23.x, , -87.46, 1);
   EXPECT_NEAR(obj23.y, 3239.00, 1);
   EXPECT_NEAR(obj23.z, 87.5, 1);
 
-  obj23.coor_calc(a3, b3);
+  obj23.coor_calc(a3, b3, noOfHum);
   EXPECT_NEAR(obj23.x, , -114.74, 1);
   EXPECT_NEAR(obj23.y, -522.98, 1);
   EXPECT_NEAR(obj23.z, 87.5, 1);
 
-  obj23.coor_calc(a4, b4);
+  obj23.coor_calc(a4, b4, noOfHum);
   EXPECT_NEAR(obj23.x, , -116.68, 1);
   EXPECT_NEAR(obj23.y, -293.86, 1);
   EXPECT_NEAR(obj23.z, 87.5, 1);

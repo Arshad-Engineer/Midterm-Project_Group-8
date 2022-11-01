@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['huamntracker_2',['HuamnTracker',['../classHuamnTracker.html',1,'']]],
-  ['humanloccalc_3',['HumanLocCalc',['../classHumanLocCalc.html',1,'']]]
+  ['coorcalc_2',['coorCalc',['../classhumanLocCalc.html#a2678fde6a9e536e64afd801464226808',1,'humanLocCalc']]]
 ];

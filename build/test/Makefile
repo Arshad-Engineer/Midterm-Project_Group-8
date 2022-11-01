@@ -115,8 +115,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -170,6 +170,33 @@ cpp-test: test/CMakeFiles/cpp-test.dir/rule
 cpp-test/fast:
 	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/build
 .PHONY : cpp-test/fast
+
+__/app/openCV.o: __/app/openCV.cpp.o
+
+.PHONY : __/app/openCV.o
+
+# target to build an object file
+__/app/openCV.cpp.o:
+	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/openCV.cpp.o
+.PHONY : __/app/openCV.cpp.o
+
+__/app/openCV.i: __/app/openCV.cpp.i
+
+.PHONY : __/app/openCV.i
+
+# target to preprocess a source file
+__/app/openCV.cpp.i:
+	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/openCV.cpp.i
+.PHONY : __/app/openCV.cpp.i
+
+__/app/openCV.s: __/app/openCV.cpp.s
+
+.PHONY : __/app/openCV.s
+
+# target to generate assembly for a file
+__/app/openCV.cpp.s:
+	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f test/CMakeFiles/cpp-test.dir/build.make test/CMakeFiles/cpp-test.dir/__/app/openCV.cpp.s
+.PHONY : __/app/openCV.cpp.s
 
 main.o: main.cpp.o
 
@@ -238,6 +265,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... cpp-test"
+	@echo "... __/app/openCV.o"
+	@echo "... __/app/openCV.i"
+	@echo "... __/app/openCV.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

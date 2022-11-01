@@ -1,0 +1,129 @@
+\hypertarget{openCV_8cpp}{}\doxysection{open\+C\+V.\+cpp File Reference}
+\label{openCV_8cpp}\index{openCV.cpp@{openCV.cpp}}
+
+
+This program contains the class member function declarations.  
+
+
+{\ttfamily \#include \char`\"{}../include/open\+C\+V.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\newline
+Include dependency graph for open\+C\+V.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{openCV_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{openCV_8cpp_ac399d90552a89ae8f07dce3b4b0337cc}\label{openCV_8cpp_ac399d90552a89ae8f07dce3b4b0337cc}} 
+double \mbox{\hyperlink{openCV_8cpp_ac399d90552a89ae8f07dce3b4b0337cc}{frame\+\_\+h}} = 640
+\begin{DoxyCompactList}\small\item\em Video Frame Horizontal Resolution. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_a6f5f2306103d7892d215ff72bc90526a}\label{openCV_8cpp_a6f5f2306103d7892d215ff72bc90526a}} 
+double \mbox{\hyperlink{openCV_8cpp_a6f5f2306103d7892d215ff72bc90526a}{frame\+\_\+v}} = 480
+\begin{DoxyCompactList}\small\item\em Video Frame Vertical Resolution. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_ac9d841b2d30b08566341e1c30ca805f2}\label{openCV_8cpp_ac9d841b2d30b08566341e1c30ca805f2}} 
+double \mbox{\hyperlink{openCV_8cpp_ac9d841b2d30b08566341e1c30ca805f2}{mid\+\_\+px\+\_\+h}} = \mbox{\hyperlink{openCV_8cpp_ac399d90552a89ae8f07dce3b4b0337cc}{frame\+\_\+h}} / 2
+\begin{DoxyCompactList}\small\item\em center horizontal pixel value of frame \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_a5e4e95cfbba48febc47ae10117ef3488}\label{openCV_8cpp_a5e4e95cfbba48febc47ae10117ef3488}} 
+double \mbox{\hyperlink{openCV_8cpp_a5e4e95cfbba48febc47ae10117ef3488}{mid\+\_\+px\+\_\+v}} = \mbox{\hyperlink{openCV_8cpp_a6f5f2306103d7892d215ff72bc90526a}{frame\+\_\+v}} / 2
+\begin{DoxyCompactList}\small\item\em center vertical pixel value of frame \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_acb559820d9ca11295b4500f179ef6392}\label{openCV_8cpp_acb559820d9ca11295b4500f179ef6392}} 
+int \mbox{\hyperlink{openCV_8cpp_acb559820d9ca11295b4500f179ef6392}{i}}
+\begin{DoxyCompactList}\small\item\em general \textquotesingle{}for\textquotesingle{} loop variables \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_a37d972ae0b47b9099e30983131d31916}\label{openCV_8cpp_a37d972ae0b47b9099e30983131d31916}} 
+int \mbox{\hyperlink{openCV_8cpp_a37d972ae0b47b9099e30983131d31916}{j}}
+\begin{DoxyCompactList}\small\item\em general \textquotesingle{}for\textquotesingle{} loop variables \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_aa49bbcaf28c892312561e71d931c823b}\label{openCV_8cpp_aa49bbcaf28c892312561e71d931c823b}} 
+double \mbox{\hyperlink{openCV_8cpp_aa49bbcaf28c892312561e71d931c823b}{a\+\_\+prev}} \mbox{[}100\mbox{]} = \{0\}
+\begin{DoxyCompactList}\small\item\em holds prev horizontal pixel value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_ad95a54f524a4fd1b774df18814b00ab0}\label{openCV_8cpp_ad95a54f524a4fd1b774df18814b00ab0}} 
+double \mbox{\hyperlink{openCV_8cpp_ad95a54f524a4fd1b774df18814b00ab0}{b\+\_\+prev}} \mbox{[}100\mbox{]} = \{0\}
+\begin{DoxyCompactList}\small\item\em holds prev vertical pixel value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_a1910d262855b71da353ed0d07a6c7823}\label{openCV_8cpp_a1910d262855b71da353ed0d07a6c7823}} 
+int \mbox{\hyperlink{openCV_8cpp_a1910d262855b71da353ed0d07a6c7823}{pos}}
+\begin{DoxyCompactList}\small\item\em holds position of repeated human from prev frame \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_ab411f641cff03576107e651a4fda2944}\label{openCV_8cpp_ab411f641cff03576107e651a4fda2944}} 
+int \mbox{\hyperlink{openCV_8cpp_ab411f641cff03576107e651a4fda2944}{ID}} \mbox{[}100\mbox{]}
+\begin{DoxyCompactList}\small\item\em array for storing unique I\+Ds assigned to humans \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_a67e4231b4e790870052be9749d77f492}\label{openCV_8cpp_a67e4231b4e790870052be9749d77f492}} 
+int \mbox{\hyperlink{openCV_8cpp_a67e4231b4e790870052be9749d77f492}{I\+D\+\_\+\+Counter}} = 1
+\begin{DoxyCompactList}\small\item\em keeps track of unique I\+Ds assigned \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_adf916204820072417ed73a32de1cefcf}\label{openCV_8cpp_adf916204820072417ed73a32de1cefcf}} 
+int \mbox{\hyperlink{openCV_8cpp_adf916204820072417ed73a32de1cefcf}{flag}}
+\begin{DoxyCompactList}\small\item\em general flag value \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_aa8b6f15b372c722be08179e285658d86}\label{openCV_8cpp_aa8b6f15b372c722be08179e285658d86}} 
+int \mbox{\hyperlink{openCV_8cpp_aa8b6f15b372c722be08179e285658d86}{count1}}
+\begin{DoxyCompactList}\small\item\em stores vector size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_a352f103b4480374c5e8ae3e132d4e958}\label{openCV_8cpp_a352f103b4480374c5e8ae3e132d4e958}} 
+int \mbox{\hyperlink{openCV_8cpp_a352f103b4480374c5e8ae3e132d4e958}{count2}}
+\begin{DoxyCompactList}\small\item\em stores vector size \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_a880a49112fedae68e714341a9a082fb6}\label{openCV_8cpp_a880a49112fedae68e714341a9a082fb6}} 
+double \mbox{\hyperlink{openCV_8cpp_a880a49112fedae68e714341a9a082fb6}{r}}
+\begin{DoxyCompactList}\small\item\em Spherical coordinates of human -\/ Radial distance. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_a636240abcfe01b37aedcf389075c0916}\label{openCV_8cpp_a636240abcfe01b37aedcf389075c0916}} 
+double \mbox{\hyperlink{openCV_8cpp_a636240abcfe01b37aedcf389075c0916}{r1}}
+\begin{DoxyCompactList}\small\item\em Radial distance projection on XY plane. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_aace2d484b0e3651abd108f04803d316c}\label{openCV_8cpp_aace2d484b0e3651abd108f04803d316c}} 
+double \mbox{\hyperlink{openCV_8cpp_aace2d484b0e3651abd108f04803d316c}{p}}
+\begin{DoxyCompactList}\small\item\em Spherical coordinates of human -\/ Polar Angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_a9d8d973bb53fc6f8b61c92a7d1178080}\label{openCV_8cpp_a9d8d973bb53fc6f8b61c92a7d1178080}} 
+double \mbox{\hyperlink{openCV_8cpp_a9d8d973bb53fc6f8b61c92a7d1178080}{az}}
+\begin{DoxyCompactList}\small\item\em Spherical coordinates of human -\/ Azimuthal Angle. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_a7008deb1cd92f21ab4a977f58e277dd2}\label{openCV_8cpp_a7008deb1cd92f21ab4a977f58e277dd2}} 
+double \mbox{\hyperlink{openCV_8cpp_a7008deb1cd92f21ab4a977f58e277dd2}{Fo\+V\+\_\+h}} = 49.\+5
+\begin{DoxyCompactList}\small\item\em horizontal FoV in Degrees (measured for laptop webcam) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_ad256f34aa5d26406dec40260df873f86}\label{openCV_8cpp_ad256f34aa5d26406dec40260df873f86}} 
+double \mbox{\hyperlink{openCV_8cpp_ad256f34aa5d26406dec40260df873f86}{Fo\+V\+\_\+v}} = 37.\+125
+\begin{DoxyCompactList}\small\item\em vertical FoV in degrees (measured for laptop webcam) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_aad395431fe463115e1048f89ce3df35e}\label{openCV_8cpp_aad395431fe463115e1048f89ce3df35e}} 
+const double \mbox{\hyperlink{openCV_8cpp_aad395431fe463115e1048f89ce3df35e}{res\+\_\+h}} = \mbox{\hyperlink{openCV_8cpp_a7008deb1cd92f21ab4a977f58e277dd2}{Fo\+V\+\_\+h}} / \mbox{\hyperlink{openCV_8cpp_ac399d90552a89ae8f07dce3b4b0337cc}{frame\+\_\+h}}
+\begin{DoxyCompactList}\small\item\em horizontal resolution (° per pixel) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_a14dce5237635508bb97cfe0467f6ae89}\label{openCV_8cpp_a14dce5237635508bb97cfe0467f6ae89}} 
+const double \mbox{\hyperlink{openCV_8cpp_a14dce5237635508bb97cfe0467f6ae89}{res\+\_\+v}} = \mbox{\hyperlink{openCV_8cpp_ad256f34aa5d26406dec40260df873f86}{Fo\+V\+\_\+v}} / \mbox{\hyperlink{openCV_8cpp_a6f5f2306103d7892d215ff72bc90526a}{frame\+\_\+v}}
+\begin{DoxyCompactList}\small\item\em vertical resolution (° per pixel) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{openCV_8cpp_aa6e8e201edf24007dc075bfef6e8210c}\label{openCV_8cpp_aa6e8e201edf24007dc075bfef6e8210c}} 
+const double \mbox{\hyperlink{openCV_8cpp_aa6e8e201edf24007dc075bfef6e8210c}{h}} = 176
+\begin{DoxyCompactList}\small\item\em Average Human Height (in cm) \end{DoxyCompactList}\item 
+const double \mbox{\hyperlink{openCV_8cpp_ad7cd26dc1ce30ff209c71b309a3134e6}{H}}
+\begin{DoxyCompactList}\small\item\em Floor -\/ table height\+: 64.\+5cm + laptop -\/ web camera height\+: 24cm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This program contains the class member function declarations. 
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2022 Dhinesh Rajasekaran
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+Dhinesh Rajasekaran (\href{mailto:dhinesh@umd.edu}{\texttt{ dhinesh@umd.\+edu}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+4.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/10-\/29 
+\end{DoxyDate}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{openCV_8cpp_ad7cd26dc1ce30ff209c71b309a3134e6}\label{openCV_8cpp_ad7cd26dc1ce30ff209c71b309a3134e6}} 
+\index{openCV.cpp@{openCV.cpp}!H@{H}}
+\index{H@{H}!openCV.cpp@{openCV.cpp}}
+\doxysubsubsection{\texorpdfstring{H}{H}}
+{\footnotesize\ttfamily const double H}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    88.5}
+
+\end{DoxyCode}
+
+
+Floor -\/ table height\+: 64.\+5cm + laptop -\/ web camera height\+: 24cm. 
+

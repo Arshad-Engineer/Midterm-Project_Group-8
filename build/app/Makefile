@@ -115,8 +115,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -157,19 +157,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-app/CMakeFiles/my_app.dir/rule:
-	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f CMakeFiles/Makefile2 app/CMakeFiles/my_app.dir/rule
-.PHONY : app/CMakeFiles/my_app.dir/rule
+app/CMakeFiles/shell-app.dir/rule:
+	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f CMakeFiles/Makefile2 app/CMakeFiles/shell-app.dir/rule
+.PHONY : app/CMakeFiles/shell-app.dir/rule
 
 # Convenience name for target.
-my_app: app/CMakeFiles/my_app.dir/rule
+shell-app: app/CMakeFiles/shell-app.dir/rule
 
-.PHONY : my_app
+.PHONY : shell-app
 
 # fast build rule for target.
-my_app/fast:
-	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f app/CMakeFiles/my_app.dir/build.make app/CMakeFiles/my_app.dir/build
-.PHONY : my_app/fast
+shell-app/fast:
+	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f app/CMakeFiles/shell-app.dir/build.make app/CMakeFiles/shell-app.dir/build
+.PHONY : shell-app/fast
 
 main.o: main.cpp.o
 
@@ -177,7 +177,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f app/CMakeFiles/my_app.dir/build.make app/CMakeFiles/my_app.dir/main.cpp.o
+	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f app/CMakeFiles/shell-app.dir/build.make app/CMakeFiles/shell-app.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -186,7 +186,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f app/CMakeFiles/my_app.dir/build.make app/CMakeFiles/my_app.dir/main.cpp.i
+	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f app/CMakeFiles/shell-app.dir/build.make app/CMakeFiles/shell-app.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -195,8 +195,35 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f app/CMakeFiles/my_app.dir/build.make app/CMakeFiles/my_app.dir/main.cpp.s
+	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f app/CMakeFiles/shell-app.dir/build.make app/CMakeFiles/shell-app.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+openCV.o: openCV.cpp.o
+
+.PHONY : openCV.o
+
+# target to build an object file
+openCV.cpp.o:
+	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f app/CMakeFiles/shell-app.dir/build.make app/CMakeFiles/shell-app.dir/openCV.cpp.o
+.PHONY : openCV.cpp.o
+
+openCV.i: openCV.cpp.i
+
+.PHONY : openCV.i
+
+# target to preprocess a source file
+openCV.cpp.i:
+	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f app/CMakeFiles/shell-app.dir/build.make app/CMakeFiles/shell-app.dir/openCV.cpp.i
+.PHONY : openCV.cpp.i
+
+openCV.s: openCV.cpp.s
+
+.PHONY : openCV.s
+
+# target to generate assembly for a file
+openCV.cpp.s:
+	cd /home/dhinesh/Downloads/Midterm-Project_Group-8/build && $(MAKE) -f app/CMakeFiles/shell-app.dir/build.make app/CMakeFiles/shell-app.dir/openCV.cpp.s
+.PHONY : openCV.cpp.s
 
 # Help Target
 help:
@@ -210,10 +237,13 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... my_app"
+	@echo "... shell-app"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... openCV.o"
+	@echo "... openCV.i"
+	@echo "... openCV.s"
 .PHONY : help
 
 

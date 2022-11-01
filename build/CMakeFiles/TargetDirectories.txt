@@ -11,7 +11,7 @@
 /home/dhinesh/Downloads/Midterm-Project_Group-8/build/app/CMakeFiles/list_install_components.dir
 /home/dhinesh/Downloads/Midterm-Project_Group-8/build/app/CMakeFiles/rebuild_cache.dir
 /home/dhinesh/Downloads/Midterm-Project_Group-8/build/app/CMakeFiles/edit_cache.dir
-/home/dhinesh/Downloads/Midterm-Project_Group-8/build/app/CMakeFiles/my_app.dir
+/home/dhinesh/Downloads/Midterm-Project_Group-8/build/app/CMakeFiles/shell-app.dir
 /home/dhinesh/Downloads/Midterm-Project_Group-8/build/test/CMakeFiles/install/strip.dir
 /home/dhinesh/Downloads/Midterm-Project_Group-8/build/test/CMakeFiles/install/local.dir
 /home/dhinesh/Downloads/Midterm-Project_Group-8/build/test/CMakeFiles/install.dir

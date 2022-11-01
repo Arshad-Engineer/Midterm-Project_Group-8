@@ -2,82 +2,45 @@
  * @copyright (c) 2022 Dhinesh Rajasekaran
  * @file main.cpp
  * @author Dhinesh Rajasekaran (dhinesh@umd.edu)
- * @brief This is the main program which takes input from python openCV
- * generated txt file and outpus human loc & unique ID
- * @version 1.0
- * @date 2022-10-12
+ * @brief This is the main program which calls various classes and runs a loop
+ * @version 4.0
+ * @date 2022-10-29
  *
  */
-
-#include <fstream>
 #include <iostream>
 
-#include "../include/detector.hpp"
+#include "../include/openCV.hpp"
 
-using std::cout;
-using std::endl;
-using std::ifstream;
-using std::string;
+using cv::waitKey;
 
-ifstream file;
-
-/**
- * @brief This class gets pixel data of human from the txt file created by
- * openCV appplication in python and returns the data.
- *
- */
-class FetchImageData {
- public:
-  string line;
-  string a, b;
-
-  /**
-   * @brief A normal member function to fetch data from txt file & split received data
-   * @return null character
-   *
-   */
-  string get_data() {
-    file.open("/home/dhinesh/Downloads/Midterm-Project_Group-8/pixel_coord.txt");
-    if (!file) {
-      cout << "Unable to find pixel_coord.txt";
-      exit(1);
-    }
-
-    while (getline(file, line, ';')) {
-      if (line.compare(";")) {
-        break;
-      }
-    }
-
-    // cout << line << endl; //for debug
-    int pos = line.find(",");
-    a = line.substr(0, pos);
-    b = line.substr(pos + 1);
-
-    file.close();
-    return "\n";
-  }
-};
+// Global Variables:
+VideoCapture Video;  ///< stores video frame received from openCV.cpp
+Mat img;             ///< img stores instantaneous frame captured from video
 
 /**
- * @brief Main function which displays detected human cartesian coordinate
- * & displays computed spherical coordinate of human in camera frame
+ * @brief Main function which calls various classes and runs a loop until
+ * any key is pressed
  * @return zero
  */
 int main() {
-  string a, b;
-  FetchImageData obj;
-  obj.get_data();
+  videoFrameData obj1;
+  Video = obj1.getFrame();  // get video data from class 1
 
-  HumanLocCalc L1;
-  L1.coor_calc(stod(obj.a), stod(obj.b));
+  while (true) {
+    Video >> img;  ///< Passing the received data to static frame
 
-  // cout << "a = " << obj.a << endl; //for debug
-  // cout << "b = " << obj.b << endl; //for debug
+    humanDetectorTracker obj2;
+    // Passing image frame to class 2 for detection & tracking of humans
+    obj2.detector_tracker(img);
 
-  cout << "Detected Human Location in Camera Frame (cartesian): (" << obj.a
-       << "," << obj.b << "," << L1.depth << ")" << endl;
-  cout << "Detected Human Location in Camera Frame (spherical): (" << L1.r
-       << "," << L1.theta << "," << L1.phi << ")" << endl;
+    humanLocCalc obj3;
+    obj3.coorCalc(obj2.a, obj2.b,
+                  obj2.n);  // Calc human location in robot frame using class 3
+    obj1.outFrame(img);     // Write changes to real-time video using class 1
+
+    if (waitKey(20) >=
+        0)  // if any key is pressed - exit from detection/tracking
+      break;
+  }
   return 0;
 }

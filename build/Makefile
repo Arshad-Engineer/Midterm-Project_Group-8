@@ -103,8 +103,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -170,17 +170,17 @@ code_coverage/fast:
 .PHONY : code_coverage/fast
 
 #=============================================================================
-# Target rules for targets named my_app
+# Target rules for targets named shell-app
 
 # Build rule for target.
-my_app: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 my_app
-.PHONY : my_app
+shell-app: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 shell-app
+.PHONY : shell-app
 
 # fast build rule for target.
-my_app/fast:
-	$(MAKE) -f app/CMakeFiles/my_app.dir/build.make app/CMakeFiles/my_app.dir/build
-.PHONY : my_app/fast
+shell-app/fast:
+	$(MAKE) -f app/CMakeFiles/shell-app.dir/build.make app/CMakeFiles/shell-app.dir/build
+.PHONY : shell-app/fast
 
 #=============================================================================
 # Target rules for targets named cpp-test
@@ -234,7 +234,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... install/local"
 	@echo "... code_coverage"
-	@echo "... my_app"
+	@echo "... shell-app"
 	@echo "... cpp-test"
 	@echo "... gtest_main"
 	@echo "... gtest"

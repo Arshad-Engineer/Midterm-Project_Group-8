@@ -6,5 +6,5 @@ CXX_FLAGS = -g -O0 -fprofile-arcs -ftest-coverage -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/dhinesh/Downloads/Midterm-Project_Group-8/test/../vendor/googletest/googletest/include -I/home/dhinesh/Downloads/Midterm-Project_Group-8/include -I/home/dhinesh/Downloads/Midterm-Project_Group-8/vendor/googletest/googletest/include 
+CXX_INCLUDES = -I/home/dhinesh/Downloads/Midterm-Project_Group-8/test/../vendor/googletest/googletest/include -I/home/dhinesh/Downloads/Midterm-Project_Group-8/include -I/home/dhinesh/Downloads/Midterm-Project_Group-8/vendor/googletest/googletest/include -isystem /usr/local/include/opencv4 
 

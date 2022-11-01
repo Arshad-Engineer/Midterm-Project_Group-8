@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['coor_5fcalc_0',['coor_calc',['../classHumanLocCalc.html#ab411b5b204f9f10fa47ad9009278ce83',1,'HumanLocCalc']]]
+  ['a_0',['a',['../classhumanDetectorTracker.html#a0300008ed6635be3631b7307169cbc6a',1,'humanDetectorTracker']]]
 ];

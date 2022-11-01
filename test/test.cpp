@@ -79,3 +79,17 @@ TEST(coor_calc, 4_humans_scattered) {
   EXPECT_NEAR(obj23.y[3], 356.66, 0.01);
   EXPECT_NEAR(obj23.z[3], 87.5, 0.1);
 }
+
+// Test Case 4:
+// Image Frame with human head in line with camera lens's
+double a4[1] = {240};  // Human horizontal pixel values
+double b4[1] = {240};  // Human vertical pixel values
+
+int noOfHum4 = 1;  // No of Humans in image frame
+
+TEST(coor_calc, human_head_inline_with_camera_lens) {
+  obj23.coorCalc(a4, b4, noOfHum4);
+  EXPECT_NEAR(obj23.x[0], -107.79, 0.01);
+  EXPECT_NEAR(obj23.y[0], 994.30, 0.01);
+  EXPECT_NEAR(obj23.z[0], 87.5, 0.1);
+}

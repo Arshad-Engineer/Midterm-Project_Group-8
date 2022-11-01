@@ -4,46 +4,78 @@
  * @author Arshad Shaik (arshad22@umd.edu)
  * @brief Test cases to check the functionality of Human Tracker
  * & Detector program
- * @version 1.0
- * @date 2022-10-12
+ * @version 2.0
+ * @date 2022-10-29
  *
  */
-
 #include <gtest/gtest.h>
 
-#include "../include/detector.hpp"
+#include "../include/openCV.hpp"
 
-HumanLocCalc obj23;
+humanLocCalc obj23;
 
-// 2 people standing on left and right respectively
-int a1[1] = {160}; a2[1] = {300}; a3[1] = {480}; a4[1] = {600}
-int b1[1] = {120}; b2[1] = {220}, b3[1] = {360}; b4[1] = {440}
-int noOfHum = 1;
+// Test Case 1:
+// Image Frame with 4 humans in main area of frame
+double a1[4] = {160, 300, 480, 600};  // Human horizontal pixel values
+double b1[4] = {120, 220, 360, 440};  // Human vertical pixel values
 
-TEST(coor_calc, should_pass) {
-  obj23.coor_calc(a1, b1, noOfHum);
-  EXPECT_NEAR(obj23.x, , -114.74, 1);
-  EXPECT_NEAR(obj23.y, 522.98, 1);
-  EXPECT_NEAR(obj23.z, 87.5, 1);
+int noOfHum1 = 4;  // No of Humans in image frame
 
-  obj23.coor_calc(a2, b2, noOfHum);
-  EXPECT_NEAR(obj23.x, , -87.46, 1);
-  EXPECT_NEAR(obj23.y, 3239.00, 1);
-  EXPECT_NEAR(obj23.z, 87.5, 1);
+TEST(coor_calc, 4_humans_main) {
+  obj23.coorCalc(a1, b1, noOfHum1);
+  EXPECT_NEAR(obj23.x[0], -114.74, 0.01);
+  EXPECT_NEAR(obj23.y[0], 522.98, 0.01);
+  EXPECT_NEAR(obj23.z[0], 87.5, 0.1);
 
-  obj23.coor_calc(a3, b3, noOfHum);
-  EXPECT_NEAR(obj23.x, , -114.74, 1);
-  EXPECT_NEAR(obj23.y, -522.98, 1);
-  EXPECT_NEAR(obj23.z, 87.5, 1);
+  EXPECT_NEAR(obj23.x[1], -87.46, 0.01);
+  EXPECT_NEAR(obj23.y[1], 3239.00, 0.01);
+  EXPECT_NEAR(obj23.z[1], 87.5, 0.1);
 
-  obj23.coor_calc(a4, b4, noOfHum);
-  EXPECT_NEAR(obj23.x, , -116.68, 1);
-  EXPECT_NEAR(obj23.y, -293.86, 1);
-  EXPECT_NEAR(obj23.z, 87.5, 1);
+  EXPECT_NEAR(obj23.x[2], -114.74, 0.01);
+  EXPECT_NEAR(obj23.y[2], -522.98, 0.01);
+  EXPECT_NEAR(obj23.z[2], 87.5, 0.1);
+
+  EXPECT_NEAR(obj23.x[3], -116.68, 0.01);
+  EXPECT_NEAR(obj23.y[3], -293.86, 0.01);
+  EXPECT_NEAR(obj23.z[3], 87.5, 0.1);
 }
 
-/*
-Test Case:
-Another test case will be written for HumanTracker before implementation
-Will be done as part of Phase 2
-*/
+// Test Case 2:
+// Image Frame with human at origin
+double a2[1] = {0};  // Human horizontal pixel values
+double b2[1] = {0};  // Human vertical pixel values
+
+int noOfHum2 = 1;  // No of Humans in image frame
+
+TEST(coor_calc, human_at_origin) {
+  obj23.coorCalc(a2, b2, noOfHum2);
+  EXPECT_NEAR(obj23.x[0], -109.08, 0.01);
+  EXPECT_NEAR(obj23.y[0], 236.63, 0.01);
+  EXPECT_NEAR(obj23.z[0], 87.5, 0.1);
+}
+
+// Test Case 3:
+// Image Frame with 4 humans scattered or at corners
+double a3[4] = {640, 640, 0, 90};  // Human horizontal pixel values
+double b3[4] = {480, 0, 480, 70};  // Human vertical pixel values
+
+int noOfHum3 = 4;  // No of Humans in image frame
+
+TEST(coor_calc, 4_humans_scattered) {
+  obj23.coorCalc(a3, b3, noOfHum3);
+  EXPECT_NEAR(obj23.x[0], -109.08, 0.01);
+  EXPECT_NEAR(obj23.y[0], -236.63, 0.01);
+  EXPECT_NEAR(obj23.z[0], 87.5, 0.1);
+
+  EXPECT_NEAR(obj23.x[1], 109.08, 0.01);
+  EXPECT_NEAR(obj23.y[1], 236.63, 0.01);
+  EXPECT_NEAR(obj23.z[1], 87.5, 0.1);
+
+  EXPECT_NEAR(obj23.x[2], 109.08, 0.01);
+  EXPECT_NEAR(obj23.y[2], -236.63, 0.01);
+  EXPECT_NEAR(obj23.z[2], 87.5, 0.1);
+
+  EXPECT_NEAR(obj23.x[3], -114.43, 0.01);
+  EXPECT_NEAR(obj23.y[3], 356.66, 0.01);
+  EXPECT_NEAR(obj23.z[3], 87.5, 0.1);
+}

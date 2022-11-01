@@ -1,9 +1,8 @@
 /**
  * @copyright (c) 2022 Arshad Shaik
- * @file test.cpp
+ * @file main.cpp
  * @author Arshad Shaik (arshad22@umd.edu)
- * @brief Test cases to check the functionality of Human Tracker
- * & Detector program
+ * @brief main program for google test case check
  * @version 1.0
  * @date 2022-10-12
  *

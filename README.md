@@ -45,7 +45,7 @@
  - https://docs.google.com/document/d/1wD_bKCtLOdt1voyiwZQc1tobgl-Iy5lTP9kQC6JQSEE/edit?usp=sharing
  
 ## Dependencies
- - openCV c++ library (run below command to install)
+ - openCV C++ library (run below command to install)
    ```
    sudo apt install libopencv-dev python3-opencv
    ```

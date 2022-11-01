@@ -58,7 +58,7 @@
    sudo apt install lcov
    ```
    
-## How to build, run & test (from command line)
+## How to build, run & test from command line
  - Run the following commands in order
 ```
 git clone --recursive https://github.com/stark-2000/Midterm-Project_Group-8.git
@@ -83,14 +83,14 @@ cpplint app/main.cpp app/openCV.cpp test/main.cpp test/test.cpp include/openCV.h
 cppcheck --enable=all --std=c++11 --suppress=missingIncludeSystem  ./app ./test > results/cppcheckreport
 cppcheck --enable=all --std=c++11 --suppress=missingIncludeSystem  ./include/openCV.hpp  > results/cppcheckreport_include_files
 ```
-## Instructions for code coverage
+## Command to check code coverage
 - From the build directory run the following command
 ```
 cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
 make
 make code_coverage
 ```
-## How to generate Doxygen documentation (from command line)
+## How to generate Doxygen documentation from command line
 - From the app directory run the following command
 ```
 doxygen main.cpp

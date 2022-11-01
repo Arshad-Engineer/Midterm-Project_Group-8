@@ -68,7 +68,7 @@ cpplint $( find . -name main.cpp) > cpplintlog
 cppcheck --enable=all --std=c++11 --suppress=missingIncludeSystem $( find . -name main.cpp) > cppchecklog
 ```
 ## Instructions for code coverage
-- From the build directory run the following command
+- From the project directory run the following command
 ```
 cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug
 make

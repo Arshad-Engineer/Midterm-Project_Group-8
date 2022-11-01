@@ -30,6 +30,7 @@
 ## Video Presentation:
  - https://youtu.be/AMKvC8GD-Lg - Phase 0
  - https://youtu.be/kq9s1iwcfdw - Phase 1
+ - https://drive.google.com/file/d/12uLaFsCV9fPUkGabaN5A38qLslWNd6hp/view?usp=share_link - Phase 2
 
 ## Requirements: 
  - Laptop

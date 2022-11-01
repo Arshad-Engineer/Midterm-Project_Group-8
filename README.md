@@ -78,8 +78,8 @@ make
 cpplint app/main.cpp app/openCV.cpp test/main.cpp test/test.cpp include/openCV.hpp > results/cpplintreport
 ```
 ## Command to run static code analysis
-```
 - From the Midterm-Project_Group-8 folder, run the below command
+```
 cppcheck --enable=all --std=c++11 --suppress=missingIncludeSystem  ./app ./test > results/cppcheckreport
 cppcheck --enable=all --std=c++11 --suppress=missingIncludeSystem  ./include/openCV.hpp  > results/cppcheckreport_include_files
 ```

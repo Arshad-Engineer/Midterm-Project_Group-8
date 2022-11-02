@@ -68,12 +68,13 @@ const double h = 176;                  ///< Average Human Height (in cm)
 const double H =
     88.5;  ///< Floor - table height: 64.5cm + laptop - web camera height: 24cm
 
-#if !defined (DONT_COVER1)
+
 /**
  * @brief Get video data from laptop webcam
  * @return Video data
  */
 VideoCapture videoFrameData::getFrame() {
+#if !defined (DONT_COVER1)
   VideoCapture video(
       0);  ///< Set video source to 0 for default webcam in laptop
   namedWindow("video capture", WINDOW_AUTOSIZE);  ///< Set laptop window size
@@ -89,16 +90,16 @@ VideoCapture videoFrameData::getFrame() {
   }
 
   return video;
-}
 #endif
+}
 
-#if !defined (DONT_COVER2)
 /**
  * @brief Detect, track & assign ID to humans
  * @param img Image frame/data to be analysed
  * @return zero
  */
 double humanDetectorTracker::detector_tracker(Mat img) {
+  #if !defined (DONT_COVER2)  
   string dtext,
       text;  ///< holds dynamic string data to be displayed as Unique ID
   string ftext = "Human ";  ///< holds static string data to be displayed
@@ -187,8 +188,8 @@ double humanDetectorTracker::detector_tracker(Mat img) {
        << endl;  // Displaying no of humans detected
   n = count2;
   return 0;
+#endif    
 }
-#endif
 
 /**
  * @brief Calc cartesian coordinates w.r.t to robot frame
@@ -250,14 +251,14 @@ double humanLocCalc::coorCalc(double a[], double b[], int n) {
   return 0;
 }
 
-#if !defined (DONT_COVER3)
 /**
  * @brief Write data to real-time video
  * @param img Image frame/data to be written
  * @return zero
  */
 double videoFrameData::outFrame(Mat img) {
+  #if !defined (DONT_COVER3)  
   imshow("Output Frame", img);  ///<  Overlay info on real-time video
   return 0;
+  #endif
 }
-#endif

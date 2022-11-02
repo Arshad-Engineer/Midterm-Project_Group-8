@@ -68,6 +68,7 @@ const double h = 176;                  ///< Average Human Height (in cm)
 const double H =
     88.5;  ///< Floor - table height: 64.5cm + laptop - web camera height: 24cm
 
+#if !defined (DONT_COVER1)
 /**
  * @brief Get video data from laptop webcam
  * @return Video data
@@ -89,7 +90,9 @@ VideoCapture videoFrameData::getFrame() {
 
   return video;
 }
+#endif
 
+#if !defined (DONT_COVER2)
 /**
  * @brief Detect, track & assign ID to humans
  * @param img Image frame/data to be analysed
@@ -185,6 +188,7 @@ double humanDetectorTracker::detector_tracker(Mat img) {
   n = count2;
   return 0;
 }
+#endif
 
 /**
  * @brief Calc cartesian coordinates w.r.t to robot frame
@@ -246,6 +250,7 @@ double humanLocCalc::coorCalc(double a[], double b[], int n) {
   return 0;
 }
 
+#if !defined (DONT_COVER3)
 /**
  * @brief Write data to real-time video
  * @param img Image frame/data to be written
@@ -255,3 +260,4 @@ double videoFrameData::outFrame(Mat img) {
   imshow("Output Frame", img);  ///<  Overlay info on real-time video
   return 0;
 }
+#endif

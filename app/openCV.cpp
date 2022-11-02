@@ -97,6 +97,7 @@ VideoCapture videoFrameData::getFrame() {
  * @return zero
  */
 double humanDetectorTracker::detector_tracker(Mat img) {
+  #if !defined (DONT_COVER2)
   string dtext,
       text;  ///< holds dynamic string data to be displayed as Unique ID
   string ftext = "Human ";  ///< holds static string data to be displayed
@@ -184,6 +185,7 @@ double humanDetectorTracker::detector_tracker(Mat img) {
   cout << "No. of Humans: " << found_filtered.size()
        << endl;  // Displaying no of humans detected
   n = count2;
+#endif
   return 0;   
 }
 
@@ -253,7 +255,7 @@ double humanLocCalc::coorCalc(double a[], double b[], int n) {
  * @return zero
  */
 double videoFrameData::outFrame(Mat img) {
-  #if !defined (DONT_COVER2)  
+  #if !defined (DONT_COVER3)  
   imshow("Output Frame", img);  ///<  Overlay info on real-time video
   #endif
   return 0;

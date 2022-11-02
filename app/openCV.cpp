@@ -78,7 +78,7 @@ VideoCapture videoFrameData::getFrame() {
   VideoCapture video(
       0);  ///< Set video source to 0 for default webcam in laptop
   namedWindow("video capture", WINDOW_AUTOSIZE);  ///< Set laptop window size
-
+#endif
   video.set(CAP_PROP_FRAME_WIDTH,
             frame_h);  ///< Set video frame horizontal resolution
   video.set(CAP_PROP_FRAME_HEIGHT,
@@ -88,9 +88,7 @@ VideoCapture videoFrameData::getFrame() {
   if (!video.isOpened()) {
     cout << "Video Source not avalable !" << endl;
   }
-
   return video;
-#endif
 }
 
 /**
@@ -99,7 +97,6 @@ VideoCapture videoFrameData::getFrame() {
  * @return zero
  */
 double humanDetectorTracker::detector_tracker(Mat img) {
-  #if !defined (DONT_COVER2)  
   string dtext,
       text;  ///< holds dynamic string data to be displayed as Unique ID
   string ftext = "Human ";  ///< holds static string data to be displayed
@@ -187,8 +184,7 @@ double humanDetectorTracker::detector_tracker(Mat img) {
   cout << "No. of Humans: " << found_filtered.size()
        << endl;  // Displaying no of humans detected
   n = count2;
-  return 0;
-#endif    
+  return 0;   
 }
 
 /**
@@ -257,8 +253,8 @@ double humanLocCalc::coorCalc(double a[], double b[], int n) {
  * @return zero
  */
 double videoFrameData::outFrame(Mat img) {
-  #if !defined (DONT_COVER3)  
+  #if !defined (DONT_COVER2)  
   imshow("Output Frame", img);  ///<  Overlay info on real-time video
-  return 0;
   #endif
+  return 0;
 }

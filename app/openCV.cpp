@@ -78,7 +78,6 @@ VideoCapture videoFrameData::getFrame() {
   VideoCapture video(
       0);  ///< Set video source to 0 for default webcam in laptop
   namedWindow("video capture", WINDOW_AUTOSIZE);  ///< Set laptop window size
-#endif
   video.set(CAP_PROP_FRAME_WIDTH,
             frame_h);  ///< Set video frame horizontal resolution
   video.set(CAP_PROP_FRAME_HEIGHT,
@@ -89,6 +88,7 @@ VideoCapture videoFrameData::getFrame() {
     cout << "Video Source not avalable !" << endl;
   }
   return video;
+#endif
 }
 
 /**
